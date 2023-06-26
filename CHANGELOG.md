@@ -1,0 +1,22 @@
+- Created a ProxyController that was similar to the ProxyDealer from Lab 06.
+  - The ProxyController handles the 6 different stages of the game, which was join, setup, take shots, report damage,
+  - successful hits, and end game.
+- Created a public record called MethodJson, which was similar to MessageJson from Lab 06.
+  - It takes in a string that will be the method name, as well as a JsonNode argument.
+- Made a JsonUtils class
+  - This has a method that helps serializing the record.
+- Created two public records called ShipJson and CoordJson
+  - These take in different parameters, respectfully, for their given purpose of displaying the accurate information 
+  - from the game BattleSalvo.
+- Fixed up AiPlayer due to shot out of bound
+  - Was getting a weird error with the shot generation from the AI player but made a check that the size of possible 
+  - shots is 0.
+- Made a Mocket class for testing purposes.
+  - This class extends Socket and was used for testing the ProxyController.
+- The Driver has changed from PA03 to PA04.
+  - Similar to PA02, it now can add configurations to the Driver. When there are no configuartions, the user can play a
+  - game of BattleSalvo against the AI in the console. However, when there are 2 configurations (host and port) and
+  - run the Server.jar, it connects the AI player to a game with another AI, and tells the user if you have won or lost.
+- In the process of making a stronger AI player.
+  - In PA03, the AI player is shooting randomly and takes the coordinates out of the list so it does not repeat. We
+  - want to enhance this by making a probability map and updating its takeSHots method in th AiPlayer class.
